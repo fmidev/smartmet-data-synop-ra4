@@ -1,7 +1,7 @@
 %define smartmetroot /smartmet
 
 Name:           smartmet-data-synop-ra4
-Version:        17.4.21
+Version:        17.11.6
 Release:        1%{?dist}.fmi
 Summary:        SmartMet Data SYNOP RA4
 Group:          System Environment/Base
@@ -11,7 +11,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
 Requires:       smartmet-qdtools
-Requires:       bzip2
+Requires:       lbzip2
 Requires:       wget
 
 %description
@@ -68,5 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %{smartmetroot}/*
 
 %changelog
+* Mon Nov 6 2017 Mikko Rauhala <mikko.rauhala@fmi.fi> 17.11.6-1.el7.fmi
+- Switch from bzip2 to lbzip2 for faster operations
 * Fri Apr 21 2017 Mikko Rauhala <mikko.rauhala@fmi.fi> 17.4.21-1.el7.fmi
 - Initial Version

@@ -69,19 +69,19 @@ synop2qd -B -t -p 1017,BUOY "$IN/*" > $BUOYFILE
 
 
 if [ -s $SYNOPFILE ]; then
-    bzip2 -k $SYNOPFILE
+    lbzip2 -k $SYNOPFILE
     mv -f $SYNOPFILE $OUT/synop/world/querydata/
     mv -f ${SYNOPFILE}.bz2 $EDITOR
 fi
 
 if [ -s $SHIPFILE ]; then
-    bzip2 -k $SHIPFILE
+    lbzip2 -k $SHIPFILE
     mv -f $SHIPFILE $OUT/ship/world/querydata/
     mv -f ${SHIPFILE}.bz2 $EDITOR
 fi
 
 if [ -s $BUOYFILE ]; then
-    bzip2 -k $BUOYFILE
+    lbzip2 -k $BUOYFILE
     mv -f $BUOYFILE $OUT/buoy/world/querydata/
     mv -f ${BUOYFILE}.bz2 $EDITOR
 fi
