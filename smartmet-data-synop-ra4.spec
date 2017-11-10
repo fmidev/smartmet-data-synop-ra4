@@ -1,7 +1,7 @@
 %define smartmetroot /smartmet
 
 Name:           smartmet-data-synop-ra4
-Version:        17.11.6
+Version:        17.11.10
 Release:        1%{?dist}.fmi
 Summary:        SmartMet Data SYNOP RA4
 Group:          System Environment/Base
@@ -68,6 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 %{smartmetroot}/*
 
 %changelog
+* Fri Nov 10 2017 Mikko Rauhala <mikko.rauhala@fmi.fi> 17.11.10-1.el7.fmi
+- Added lock file to stop parallel runs
 * Mon Nov 6 2017 Mikko Rauhala <mikko.rauhala@fmi.fi> 17.11.6-1.el7.fmi
 - Switch from bzip2 to lbzip2 for faster operations
 * Fri Apr 21 2017 Mikko Rauhala <mikko.rauhala@fmi.fi> 17.4.21-1.el7.fmi

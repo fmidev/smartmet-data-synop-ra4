@@ -5,6 +5,8 @@
 # SmartMet Data Ingestion Module for SYNOP Observations for RA IV
 #
 
+lockfile -l 3600 -r 0 /tmp/smartmet-data-synop.lock || exit 1
+
 URL=https://ra4-gifs.weather.gov/data/RMTN/SURFACE/
 
 if [ -d /smartmet ]; then
@@ -87,3 +89,4 @@ if [ -s $BUOYFILE ]; then
 fi
 
 rm -f $TMP/*.sqd*
+rm -f /tmp/smartmet-data-synop.lock
